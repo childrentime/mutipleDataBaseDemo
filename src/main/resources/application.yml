@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      strict: false
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3306/course1?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
+          username: root
+          password: helloworld1.cpp
+          driver-class-name:  com.mysql.cj.jdbc.Driver
+        slave_1:
+          url: jdbc:mysql://localhost:3306/course2?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
+          username: root
+          password: helloworld1.cpp
+          driver-class-name:  com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 1000MB
+#MyBatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.wechat.entity;
+  configuration:
+    map-underscore-to-camel-case: false
+    cache-enabled: true
+    call-setters-on-nulls: true
+logging:
+  level:
+    com.course.demo: DEBUG
+
