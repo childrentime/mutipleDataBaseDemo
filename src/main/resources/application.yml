@@ -23,7 +23,6 @@ spring:
 #MyBatis
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
-  typeAliasesPackage: com.wechat.entity;
   configuration:
     map-underscore-to-camel-case: false
     cache-enabled: true
